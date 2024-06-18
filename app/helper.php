@@ -9,8 +9,8 @@ function view($file_path)  {
     }else{
         throw new Exception('Page not found ') . $file;
     }
-
 }
+
 function redirect($url) {
     header("Location: {$url}");
     exit();
