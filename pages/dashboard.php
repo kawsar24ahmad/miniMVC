@@ -1,8 +1,3 @@
-<?php
-
-include_once 'auth.php';
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +15,8 @@ include_once 'auth.php';
     <div class="row justify-content-center">
         <div class="col-sm-center pt-4">
             <h2>User Dashboard</h2>
-        
-            <a href="logout.php" class="btn btn-dark btn-sm">Log Out</a>
+            <?php echo $_SERVER['user_name'] ?? "Hi"  ?>
+            <a href="logout" class="btn btn-dark btn-sm">Log Out</a>
         </div>
     </div>
  

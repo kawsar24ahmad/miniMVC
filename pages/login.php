@@ -1,26 +1,3 @@
-<?php
-
-include_once 'guest.php';
-// include_once 'app/User.php';
-use App\Models\User;
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $user = new User;
-    $user->email = $_POST['email'];
-    $user->password = $_POST['password'];
-
-    if ($user->login()) {
-        $_SESSION['user_id'] = $user->id;
-        $_SESSION['user_name'] = $user->name;
-        $_SESSION['user_email'] = $user->email;
-        header('Location: dashboard.php');
-        exit();
-    }else{
-        echo 'Unable to login user!';
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="row justify-content-center">
         <div class="col-sm-center pt-4">
             <h2>Login form</h2>
-            <form action="login.php" method="POST">
+            <form action="submit-login" method="POST">
                 <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">

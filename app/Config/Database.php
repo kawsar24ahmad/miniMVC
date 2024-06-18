@@ -1,5 +1,7 @@
 <?php
 namespace App\Config;
+use PDO;
+
 class Database{
     private $host = 'localhost';
     private $db_name = 'auth';

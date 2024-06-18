@@ -3,6 +3,6 @@ namespace App\Controllers;
 
 class RegisterController{
     function index()  {
-        echo 'RegisterController index function';
+        require_once 'pages/register.php';
     }
 }
