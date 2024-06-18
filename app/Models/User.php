@@ -1,9 +1,8 @@
 <?php
 namespace App\Models;
-// include_once 'Database.php';
-use App\Config\Database;
+use App\Models\BaseModel;
 use PDO;
-class User extends Database{
+class User extends BaseModel{
     private $table_name = "users";
     public $id;
     public $name;
