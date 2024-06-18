@@ -2,16 +2,16 @@
 
 use App\Services\Route;
 
-Route::add('', 'HomeController', 'index', 'GET');
+Route::get('', 'HomeController', 'index');
 // Route::add('/oop_hindi/auth-php', 'HomeController', 'index', 'GET');
-Route::add('login', 'LoginController', 'index', 'GET');
+Route::get('login', 'LoginController', 'index');
 
-Route::add('submit-login', 'LoginController', 'login', 'POST');
+Route::post('submit-login', 'LoginController', 'login', 'POST');
 
-Route::add('register', 'RegisterController', 'index', 'GET');
-Route::add('submit-register', 'RegisterController', 'register', 'POST');
+Route::get('register', 'RegisterController', 'index');
+Route::post('submit-register', 'RegisterController', 'register', 'POST');
 
-Route::add('logout', 'DashboardController', 'logout', 'GET');
+Route::get('logout', 'DashboardController', 'logout');
 
-Route::add('dashboard', 'DashboardController', 'index', 'GET');
+Route::get('dashboard', 'DashboardController', 'index');
  
