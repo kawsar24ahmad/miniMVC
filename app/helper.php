@@ -15,3 +15,6 @@ function redirect($url) {
     header("Location: {$url}");
     exit();
 }
+function pageAdd($fileName) {
+    include(APP_ROOT. '/pages/'. $fileName);
+}
