@@ -4,7 +4,8 @@ use App\Models\User;
 
 class LoginController{
     function index()  {
-        require_once 'pages/login.php';
+        view('auth.login');
+        // require_once 'pages/login.php';
     }
     function login()  {
         $user = new User;

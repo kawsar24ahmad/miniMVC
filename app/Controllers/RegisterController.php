@@ -4,7 +4,8 @@ use App\Models\User;
 
 class RegisterController{
     function index()  {
-        require_once 'pages/register.php';
+        // require_once 'pages/register.php';
+        view('auth.register');
     }
     public function register()  {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
