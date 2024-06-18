@@ -1,34 +1,3 @@
-<?php
-
-include_once 'guest.php';
-include_once 'app/User.php';
-
-$error_message = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-
-    if (empty($name) || empty($email) || empty($password)) {
-        $error_message = 'All fields are required!';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error_message = 'Invalid email format!';
-    } else {
-        $user = new User;
-        $user->name = $name;
-        $user->email = $email;
-        $user->password = $password;
-
-        if ($user->register()) {
-            echo 'This user is registered.';
-        } else {
-            $error_message = 'Unable to register user!';
-        }
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo '<div class="alert alert-danger">' . htmlspecialchars($error_message) . '</div>';
             }
             ?>
-            <form action="register.php" method="POST">
+            <form action="submit-register" method="POST">
                 <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
@@ -66,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="login.php" class="btn btn-dark">Login</a>
+                <a href="login" class="btn btn-dark">Login</a>
             </form>
         </div>
     </div>
